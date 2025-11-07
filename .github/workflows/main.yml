@@ -5,6 +5,9 @@ on:
 jobs:
   caches_and_artifacts:
     runs-on: ubuntu-latest
+    concurrency:
+      group: deploy
+      cancel-in-progress: true
     steps:
       - name: checkout action
         uses: actions/checkout@v6-beta
