@@ -6,7 +6,7 @@ jobs:
   caches_and_artifacts:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: checkout action
         uses: actions/checkout@v6-beta
       - name: nodejs setup
         uses: actions/setup-node@v6.0.0
@@ -14,7 +14,7 @@ jobs:
           node-version: 22.x
           cache: 'npm'
       - name: install deps
-        run: npm install --legacy-peer-deps
+        run: npm install 
         
       - name: build setup
         run: npm run build
@@ -23,11 +23,4 @@ jobs:
         uses: actions/upload-artifact@v5.0.0
         with: 
           name: nxtb
-          path: out/
-
-
-          
-          path : out/
-          
-       
-       
+          path: out/ 
