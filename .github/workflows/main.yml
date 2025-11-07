@@ -15,12 +15,18 @@ jobs:
           cache: 'npm'
       - name: install deps
         run: npm install --legacy-peer-deps
+        
       - name: build setup
         run: npm run build
+        
       - name: upload artifacts
         uses: actions/upload-artifact@v5.0.0
         with: 
           name: nxtb
+          path: out/
+
+
+          
           path : out/
           
        
